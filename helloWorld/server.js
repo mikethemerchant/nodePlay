@@ -1,15 +1,13 @@
 const http = require('http');
 
-const hostname = '127.0.0.1';
+const hostname = 'localhost';
 const port = 3000;
 
 const server = http.createServer( (req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World dont start with F5');
+    res.end('This is the server mike\n');
 });
-
-// Q: how do I stop the server?
 
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);

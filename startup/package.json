@@ -1,0 +1,12 @@
+{
+  "name": "startup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts.js",
+  "scripts": {
+    "mike": "node scripts.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -6,9 +6,9 @@ const port = 3000;
 const server = http.createServer( (req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end('start this with npm\n');
+    res.end(`user id ${process.env.USER_ID}`);
 });
 
 server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+    console.log(`user id ${process.env.USER_ID}`);
 });

@@ -1,0 +1,16 @@
+{
+  "name": "notworking",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "work.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^9.2.7"
+  }
+}

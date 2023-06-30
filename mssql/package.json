@@ -1,0 +1,15 @@
+{
+  "name": "mssql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "runquery.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mssql": "^9.1.1"
+  }
+}

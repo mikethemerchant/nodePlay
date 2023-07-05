@@ -1,9 +1,9 @@
-const amount = 5;
+// CommonJS, every file is module (by default)
+// Modules -- encapsulated code (only share minimum)
 
-if (amount < 10){
-    console.log('small number');
-} else {
-    console.log('large number');
-}
+const names = require('./4-names');
+const sayHi = require('./5-utils');
 
-console.log(`hey it's my first node app!!!`);
+sayHi('Susan');
+sayHi(names.john);
+sayHi(names.peter);

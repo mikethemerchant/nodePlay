@@ -1,32 +1,6 @@
-// this one without copilot
-const { readFile, writeFile } = require('fs')
+const _ = require('lodash')
 
-console.log('start')
+const items = [1, [2, [3, [4]]]]
+const newItems = _.flattenDeep(items)
 
-readFile('./content/first.txt','utf-8',(err,result) => {
-    if(err) {
-        console.log(err)
-        return
-    }
-    const first = result
-
-    readFile('./content/second.txt','utf-8',(err,result) => {
-        if(err) {
-            console.log(err)
-            return
-        }
-        const second = result
-
-        writeFile('./content/writeFile1.txt',
-                  `combine the files: ${first} ${second} `,
-                  (err, result) => {
-                    if(err) {
-                        console.log(err)
-                        return
-                    }
-                    console.log('done.')
-                  }
-                )
-    })
-})
-console.log('end')
+console.log(newItems)

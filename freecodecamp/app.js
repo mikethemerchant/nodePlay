@@ -1,32 +1,15 @@
-const {readFile} = require('fs');
-const util = require('util');
-const readFilePromise = util.promisify(readFile);
-//const writeFilePromise = util.promisify(writeFile);
+const {createReadStream} = require('fs');
+
+const stream = createReadStream('../content/big.txt',{ highWaterMark: 90000, encoding: 'utf-8' });
+
+// buffer size is 64kbs
 
 
 
-const start = async () => {
-    try {
-        const first = await readFilePromise('./content/first.txt', 'utf8');
-        const second = await readFilePromise('./content/second.txt', 'utf8');
-        console.log(first,second);
-    } catch (error) {
-        console.log(error);
-    }
-};
+stream.on('data', (result) => {
+    console.log(result);
+})
 
-start();
-
-// const getText = (path) => {
-//     return new Promise((resolve, reject) => {
-//         readFile(path, 'utf8', (err, data) => {
-//             if(err){
-//                 reject(err);
-//             } else {
-//                 resolve(data);
-//             }
-//         });
-//     });
-// };
-
-//getText('./content/first.txt').then((result) => console.log(result)).catch((err) => console.log(err));
+stream.on('error', (err) => {
+    console.log(err);
+})
